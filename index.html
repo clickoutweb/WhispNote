@@ -20,17 +20,18 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 40px 20px 100px;
+      padding: 40px 20px 200px;
+      position: relative;
     }
 
     h1 {
       font-size: 2.2rem;
-      margin-bottom: 20px;
+      margin: 20px 0 10px;
       color: #fff;
       letter-spacing: 1px;
       opacity: 0.9;
+      text-align: center;
     }
 
     p {
@@ -55,6 +56,7 @@
       backdrop-filter: blur(10px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: all 0.3s ease;
+      margin-bottom: 30px;
     }
 
     textarea::placeholder {
@@ -62,28 +64,23 @@
       font-style: italic;
     }
 
-    textarea:focus {
-      border-color: #ffffff55;
-      background: rgba(255, 255, 255, 0.07);
-    }
-
     footer {
-      margin-top: 40px;
+      margin-top: 20px;
       font-size: 0.8rem;
       color: #555;
       text-align: center;
     }
 
-    .ad-container {
-      position: fixed;
-      bottom: 10px;
+    .ad-container, .ad-sidebar {
       width: 100%;
       display: flex;
       justify-content: center;
-      z-index: 999;
+      margin: 20px 0;
     }
 
-    .ad-container iframe {
+    .ad-container iframe,
+    .ad-sidebar iframe,
+    .ad-inline iframe {
       width: 728px;
       height: 90px;
       border: 0;
@@ -92,23 +89,98 @@
       background-color: transparent;
       max-width: 95%;
     }
+
+    .ad-fixed-bottom {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .ad-fixed-corner {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 300px;
+      height: 250px;
+      z-index: 999;
+    }
+
+    .ad-fixed-corner iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .ad-sidebar {
+      display: none;
+    }
+
+    @media(min-width: 1024px) {
+      .ad-sidebar {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 150px;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- TOP AD -->
+  <div class="ad-container">
+    <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=728x90'></iframe>
+  </div>
+
+  <!-- FIXED TOP RIGHT CORNER -->
+  <div class="ad-fixed-corner">
+    <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=300x250'></iframe>
+  </div>
+
+  <!-- SIDEBAR LEFT (Desktop) -->
+  <div class="ad-sidebar">
+    <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=160x600'></iframe>
+  </div>
+
   <h1>WhispNote</h1>
+
+  <!-- BELOW TITLE -->
+  <div class="ad-container">
+    <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=728x90'></iframe>
+  </div>
+
   <p>Type a single thought. Just for you. It vanishes on refresh.</p>
 
   <textarea placeholder="Write something you're feeling..."></textarea>
 
-  <footer>No save. No pressure. Just whisper and let go.</footer>
-
-  <!-- A-ADS Banner -->
+  <!-- BELOW TEXTAREA -->
   <div class="ad-container">
+    <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=728x90'></iframe>
+  </div>
+
+  <!-- INLINE MID AD -->
+  <div class="ad-container">
+    <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=728x90'></iframe>
+  </div>
+
+  <!-- FOOTER INLINE AD -->
+  <footer>
+    <div class="ad-container">
+      <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=728x90'></iframe>
+    </div>
+    No save. No pressure. Just whisper and let go.
+  </footer>
+
+  <!-- FIXED BOTTOM AD -->
+  <div class="ad-fixed-bottom">
     <iframe data-aa='2400580' src='//ad.a-ads.com/2400580?size=728x90'></iframe>
   </div>
 
 </body>
 </html>
+
 
 
