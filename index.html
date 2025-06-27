@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WhispNote – Say it, Let it Go</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;600&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1e1e1e, #000000);
+      color: #ffffffcc;
+      font-family: 'Roboto Slab', serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #fff;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #aaa;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      min-height: 150px;
+      resize: none;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid #ffffff22;
+      border-radius: 16px;
+      padding: 20px;
+      font-size: 1.2rem;
+      color: #fff;
+      outline: none;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    textarea::placeholder {
+      color: #ffffff55;
+      font-style: italic;
+    }
+
+    textarea:focus {
+      border-color: #ffffff55;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>WhispNote</h1>
+  <p>Type a single thought. Just for you. It vanishes on refresh.</p>
+
+  <textarea placeholder="Write something you're feeling..."></textarea>
+
+  <footer>No save. No pressure. Just whisper and let go.</footer>
+
+</body>
+</html>
